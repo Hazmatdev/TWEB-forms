@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inscrição nos jogos escolares</title>
+</head>
+
+<body>
+    <header>
+        <h1>Inscrição nos jogos escolares</h1>
+        Preencha os campos abaixo com suas informações.
+    </header>
+    <main>
+        <form id="inscricao-jogos" action="/inscricoes-jogos" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Identificação do atleta</legend>
+                <label for="nome-atleta">Nome completo do atleta (obrigatório)</label>
+                <input type="text" id="nome-atleta" name="nome_atleta" required><br>
+                <label for="email-atleta">E-mail de contato (obrigatório)</label>
+                <input type="email" id="email-atleta" name="email_atleta" required><br>
+                <label for="tel-atleta">telefone do atleta(obrigatorio)</label>
+                <input type="tel" id="tel-atleta" name="tel-atleta" required><br>
+                <label for="site">site da escola</label>
+                <input type="text" id="site" name="site" value="https://"><br>
+                <label for="data">Data de nascimento</label>
+                <input type="date" id="data" name="data"><br>
+                <label for="documento">documento de inscrição fisico</label>
+                <input type="file" name="documento"><br>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>participação nos jogos</legend>
+                <label for="equipe">Nome da equipe</label>
+                <input type="text" id="equipe" name="equipe" value="Equipe Horizonte"><br>
+                <label for="participantes">Numero de integrantes</label>
+                <input type="text" id="participantes" name="participantes" value="8"><br>
+                <label for="escola">Escola de Origem</label>
+                <input type="search" id="escola" name="escola" list="escolas"><br>
+                <datalist id="escolas">
+                    <option value="escola aurora"></option>
+                    <option value="escola campo verde"></option>
+                    <option value="escola barro alto"></option>
+                </datalist>
+            </fieldset>
+
+            <fieldset>
+                <legend>Turno de preferência</legend>
+                <input type="radio" id="turno-manha" name="turno" value="manha">
+                <label for="turno-manha">Manhã</label>
+                <input type="radio" id="turno-tarde" name="turno" value="tarde">
+                <label for="turno-tarde">Tarde</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Modalidades de interesse</legend>
+                <input type="checkbox" id="interece-futsal" name="modalidades" value="futsal">
+                <label for="interece-futsal">Futsal</label>
+                <input type="checkbox" id="interece-volei" name="modalidades" value="volei">
+                <label for="interece-volei">Voleibol</label>
+                <label for="modalidade-principal">modalidade principal</label>
+                <select id="modalidade-principal" name="modalidade_principal" required>
+                    <option value="">selecione a modalidade</option>
+                    <optgroup label="coletivas">
+                        <option value="futsal">Futsal</option>
+                        <option value="Voleibol">Voleibol</option>
+                    </optgroup>
+                    <optgroup label="individuais">
+                        <option value="atletismo">Atletismo</option>
+                        <option value="xadrez">Xadrez</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+            <input type="submit" value="enviar inscrição">
+            <input type="reset" value="restaurar valores iniciais">
+            <input type="button" value="ajuda">
+        </form>
+    </main>
+</body>
+
+</html>
